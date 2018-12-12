@@ -129,6 +129,38 @@ Below is an example of input file.
 
 As described in the first section of the file, they are 10 student profiles, each making 3 choices, across 5 different schools. The first line of the second section states that a girl named Geraldine TELLIER, born the 25th of february in 2000, actually in Saint-Chamond, wants to go to schools identified by 1, 2 and 3. By looking at the third section, we can say that she wants to go to the Université Clermont Auvergne first, then to Université d'Angers, then finally to IUT Chimie of Grenoble ; in that specific order. We can also note that IUT Chimie has ranked her in third position and has a capacity of 1 student.
 
+# FAQ
+
+> Will the input file always be valid?
+
+No, and error should be yielded. But start simple.
+
+> Do we need to parse entirely the input file?
+
+Yes. You won't have all the information otherwise.
+
+> Do we have to test our code?
+
+Yes. Obviously. Unit testing is expected and required. JUnit should be used (in v4 or v5)
+
+> Do we have to use git?
+
+Yes.
+
+> Will the code be evaluated?
+
+Yes. Especially the complexity, clarity, and respect to OOP principles will be evaluated.
+
+> We don’t agree with the given architecture, can we change it?
+
+No.
+
+> What is a maven module?
+
+It is an executable unit, that group coherent codes. Google it!
+
+
+
 [^1]: <https://en.wikipedia.org/wiki/List_(abstract_data_type)>
 
 [^2]: <https://en.wikipedia.org/wiki/Stable_marriage_problem>
