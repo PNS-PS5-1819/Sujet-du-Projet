@@ -1,3 +1,12 @@
+| Topic        | Expected           |
+| :-------------: |:-------------:|
+| Location     | at the root of your git project-structure| 
+| Name     | `Team-X-report` (replace `X` by your team ID) | 
+| Format     | `PDF`| 
+| Date     | see [the subject file](https://github.com/PNS-PS5-1819/informations/blob/master/sujet.md#schedule)| 
+| Content     | see below| 
+
+
 
 # Content of the report
 Items below are labeled with `professional`, `expert`, `raw data`, or `scientific`, meaning that they will be used to grade a specific aspect of your work. See Grading section for more details.
