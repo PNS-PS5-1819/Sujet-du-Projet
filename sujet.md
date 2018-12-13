@@ -71,9 +71,10 @@ We provide here some metrics for you to start, but others are expected: number o
 *Apply* your Parcoursup proposition over the provided datasets, *record* relevant metrics, then *save* and *report* them. 
 Finally, compare your metrics, your approaches, and give your final decision on whether the ministry should stick with APB or go for large scale Parcoursup deployment.
 
-Your propositions should be developed in Java, and use the Maven tool. 
-Your project architecture should be multi-modules, meaning that there is a parent maven project, and n modules, linked to the parent project. 
+- Your propositions should be developed in Java, and use the Maven tool. 
+- Your project architecture should be multi-modules, meaning that there is a parent maven project, and n modules, linked to the parent project. 
 More information can be found on the sonatype website[^5].
+- The `README.md` file that is at the root of your project should be filled with team informations and **How** to use your software. 
 
 # Schedule
 
