@@ -16,7 +16,7 @@ First, you have to pickup your _official_ email address in the course roster. Th
 
 ![roster example](./pics/roster.png)
 
-Then, you have to options. If your team already exists, simply click on the team name to join it.
+Then, you have two options. If your team already exists, simply click on the team name to join it.
 
 ![join team](./pics/join_team.png)
 
@@ -33,7 +33,7 @@ If your project team does not exist yet, you can create a new team. This will cr
 
 ## Setting up the Git environment
 
-By creating a new team or joining an existing one, it will give you access to a github repository under the `PNS-PS5-1819`. You have to clone this project on your computer, _e.g._ using a `git clone` command. For example, if your team is named staff, it should look like the following:
+By creating a new team or joining an existing one, it will give you access to a github repository under `PNS-PS5-1819`. You have to clone this project on your computer, _e.g._ using a `git clone` command. For example, if your team is named `staff`, it should look like the following:
 
 ```
 azrael:~ mosser$ git clone https://github.com/PNS-PS5-1819/staff.git
@@ -88,7 +88,7 @@ azrael:staff mosser$git config user.email "john.doe@etu.univ-cotedazur.fr"
 
 ## Understanding the architecture
 
-Your project contains intially the following files:
+Your project contains initially the following files:
 
 ```
 azrael:skeleton mosser$ tree -a -I '.git*' .
@@ -129,22 +129,22 @@ azrael:skeleton mosser$ tree -a -I '.git*' .
 
 ``` 
 
-  * The `install.md` file contains information to retrieve the datasets to be used. Please follow its contents to populate automatically the `dataset` directory;
+  * The `install.md` file contains information to retrieve the datasets to be used. **Please follow its contents to populate automatically the `dataset` directory**;
   * The `README.md` file should be updated to reflect your team contents. It will be used as a journal, so you should provide each day a brief report on what happened during the day;
-  * The directory contains three `pom.xml` file, reflecting the three modules modelled in this system: 
-    *  The `./pom.xml` file is the root one. Change its contents to replace the `team.name` tag, and the `groupId` one with your assigned identifier.
-    *  The `./apb/pom.xml` file is the pom that controls the APB implementation. Edit its contents to change the `groupId` one to match the root one.
-    *  The `./parcoursup/pom.xml` file is the pom that controls the ParcourSup implementation. Do the same modification than for APB.
+  * The directory contains three `pom.xml` files, reflecting the three modules modelled in this system: 
+    *  The `./pom.xml` file is the `root` one. Change its contents to replace the `team.name` tag, and the `groupId` one with your assigned identifier.
+    *  The `./apb/pom.xml` file is the pom that controls the `APB` implementation. Edit its contents to change the `groupId` one to match the root one.
+    *  The `./parcoursup/pom.xml` file is the pom that controls the `ParcourSup` implementation. Do the same modification than for APB.
   * The `travis.yml` file describes the continuous integration process, see the associated section. 
 
 
 ## Accessing the Continuous Integration server
 
-Thanks to Travis academic offer, your project is automatically linked to a continuous integration server. It means that each time that you `push` your code to the Github repository, the following process is triggered:
+Thanks to Travis academic offer, your project is automatically linked to a continuous integration server. It means that each time you `push` your code to the Github repository, the following process is triggered:
 
-  1. First it compiles your code using the following command: `mvn clean package`
+  1. It compiles your code using the following command: `mvn clean package`
   2. If the compilation succeeds, it runs the `PMD` tools to analyse the quality of your code and detect bad smells;
-  3. In any case, it run the `Git Inspector` took to analyse code paternity.
+  3. In any case, it runs the `Git Inspector` tool to analyse code paternity.
 
 For each commit, you can connect to [TravisCI](http://travis-ci.com) to see its status.
 
@@ -153,7 +153,7 @@ For each commit, you can connect to [TravisCI](http://travis-ci.com) to see its 
 
 ### Example of `PMD` output
 
-PMD is a static code analysis tools that can identify classical issues in your code. It will helps you to improve code quality.
+PMD is a static code analysis tools that can identify classical issues in your code. It will help you to improve code quality.
 
 ```
 azrael:3A_test_framework mosser$ $PWD/pmd-bin-6.10.0/bin/run.sh pmd -d polyunit/src/main/java -R rulesets/java/quickstart.xml -f text
@@ -176,7 +176,7 @@ fr/unice/polytech/qgl/tests/unit/assertions/AssertionFailedError.java:3:	Excepti
 
 ### Example of `Git Inspector` output
 
-Git Inspector is used to analyse your git history and identify contribution of each team member in the project.
+Git Inspector is used to analyse your `git` history and identify contribution of each team member in the project.
 
 ![create team](./pics/inspector.png)
 
