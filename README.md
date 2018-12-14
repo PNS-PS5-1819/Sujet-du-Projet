@@ -2,9 +2,9 @@
 
   * Timeframe: 17/12/2018 → 23/12/2018
   * Staff: 
-  	* [Benjamin Benni](benni@i3s.unice.fr): facilitation, software engineering.
-    * [Sébastien Mosser](mosser@i3s.unice.fr): facilitation, software engineering.
-    * [Christophe Papazian](papazian@polytech.unice.fr): algorithmic.
+  	* [Benjamin Benni](mailto:benni@i3s.unice.fr): facilitation, software engineering.
+    * [Sébastien Mosser](mailto:mosser@i3s.unice.fr): facilitation, software engineering.
+    * [Christophe Papazian](mailto:papazian@polytech.unice.fr): algorithmic.
 
 ## Pedagogical Objectives
 
