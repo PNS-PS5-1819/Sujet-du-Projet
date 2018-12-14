@@ -1,186 +1,159 @@
-# Step 0: Setting up the environment
+# Step 1: Implementing Admission PostBac
 
-<div align="center">
+## Algorithm overview
 
-<font color="red"><strong>Students who do not comply with the instructions in this section will lose 50% of their grade.</strong></font>
+In APB, each student defines an ordered _wish list_ of schools, and each school ranks the students who applied to this curriculum in an ordered way. The objective is to match each student to a school, maximising the "happiness" of both stakeholders: A student *must* be accepted to the *best* school she ranked, with respect to the ranking expressed by all the school she applied to.
 
-</div>
+This is a variation of the _Stable Marriage_ problem, The following text is an extract of the [Wikipedia page](https://en.wikipedia.org/wiki/Stable_marriage_problem) dedicated to this problem
 
-## Accepting the Project Assignment
-
-Follow the GitHub Classroom link to accept the project assignment:
-
-  * [https://classroom.github.com/g/pFwbFIkv](https://classroom.github.com/g/pFwbFIkv)
-
-First, you have to pickup your _official_ email address in the course roster. This will be used by the notation system, so pick up the _right_ email address.
-
-![roster example](./pics/roster.png)
-
-Then, you have to options. If your team already exists, simply click on the team name to join it.
-
-![join team](./pics/join_team.png)
+The _Stable Marriage_ problem is stated as the following:
 
 
-If your project team does not exist yet, you can create a new team. This will create a new project repository for this newly created team, and clone an initial code skeleton in it.
+> Given **n** men and **n** women, where each person has ranked all members of the opposite sex in order of preference, marry the men and women together such that there are no two people of opposite sex who would both rather have each other than their current partners. When there are no such pairs of people, the set of marriages is deemed stable.
 
-![create team](./pics/create_team.png)
 
-<div align="center">
-
-<font color="red"><strong>DO NOT CHANGE THE PROJECT MEMBERS DIRECTLY IN THE REPOSITORY, YOU MUST USE THE CLASSROOM MECHANISM TO BE INCLUDED IN THE GRADING SYSTEM AND IT CANNOT BE CHANGED LATER.</strong></font>
-
-</div>
-
-## Setting up the Git environment
-
-By creating a new team or joining an existing one, it will give you access to a github repository under the `PNS-PS5-1819`. You have to clone this project on your computer, _e.g._ using a `git clone` command. For example, if your team is named staff, it should look like the following:
+David Gale and Lloyd Shapley provided in 1962 an algorithm to solve this problem:
 
 ```
-azrael:~ mosser$ git clone https://github.com/PNS-PS5-1819/staff.git
-Cloning into 'staff'...
-remote: Enumerating objects: 62, done.
-remote: Counting objects: 100% (62/62), done.
-remote: Compressing objects: 100% (32/32), done.
-remote: Total 62 (delta 15), reused 55 (delta 8), pack-reused 0
-Unpacking objects: 100% (62/62), done.
-azrael:~ mosser$ cd staff/
-azrael:staff mosser$
-```
-You can verify that everything is correct by asking maven to compile the code skeleton:
-
-```
-azrael:staff mosser$ mvn clean package
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Build Order:
-[INFO] 
-[INFO] Team AWESOME                                                       [pom]
-[INFO] apb                                                                [jar]
-[INFO] parcoursup                                                         [jar]
-****
-...
-[INFO] Reactor Summary for Team AWESOME 1.0-SNAPSHOT:
-[INFO] 
-[INFO] Team AWESOME ....................................... SUCCESS [  0.006 s]
-[INFO] apb ................................................ SUCCESS [  1.413 s]
-[INFO] parcoursup ......................................... SUCCESS [  0.062 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.649 s
-[INFO] Finished at: 2018-12-13T19:24:51+01:00
-[INFO] ------------------------------------------------------------------------
+function stableMatching { 				// source: wikipedia
+    Initialize all m ∈ M and w ∈ W to free
+    while ∃ free man m who still has a woman w to propose to {
+       w = first woman on m’s list to whom m has not yet proposed
+       if w is free
+         (m, w) become engaged
+       else some pair (m', w) already exists
+         if w prefers m to m'
+            m' becomes free
+           (m, w) become engaged 
+         else
+           (m', w) remain engaged
+    }
+}
 ```
 
+This algorithm ensures the two following properties:
 
-Finally, to ensure that you are correctly detected by the grading system, you must specify your credentials (real name and email address):
+  - **Everyone gets married**:
+    - _At the end, there cannot be a man and a woman both unengaged, as he must have proposed to her at some point (since a man will eventually propose to everyone, if necessary) and, being proposed to, she would necessarily be engaged (to someone) thereafter._ 
+  - **The marriages are stable**:
+    - _Let Alice and Bob both be engaged, but not to each other. Upon completion of the algorithm, it is not possible for both Alice and Bob to prefer each other over their current partners. If Bob prefers Alice to his current partner, he must have proposed to Alice before he proposed to his current partner. If Alice accepted his proposal, yet is not married to him at the end, she must have dumped him for someone she likes more, and therefore doesn't like Bob more than her current partner. If Alice rejected his proposal, she was already with someone she liked more than Bob._
 
-```
-azrael:staff mosser$git config user.name "John Doe"
-azrael:staff mosser$git config user.email "john.doe@etu.univ-cotedazur.fr"
-```
+## Expected Work
 
-<div align="center">
+  1. Implement a parser that support the input files available in the provided dataset;
+  2. Adapt the Gale-Shapley algorithm to work with schools and students instead of mens and womens;
+  3. Implement a set of metrics to measure your solution
+  3. Benchmark the execution time of your algorithm on the provided datasets.
 
-<font color="red"><strong>STUDENTS WHO DO NOT USE OFFICIAL CREDENTIALS AFTER MONDAY 13:00 WILL BE REJECTED BY THE GRADING SYSTEM.</strong></font>
+## Running your project
 
-</div>
+We provide a shell script named `app.sh` that wraps the command line to the `mvn exec:java` plugin.
 
-## Understanding the architecture
+### Command line arguments
 
-Your project contains intially the following files:
+You have to support the command line arguments, given in an arbitrary order:
 
-```
-azrael:skeleton mosser$ tree -a -I '.git*' .
-.
-|-- .travis.yml
-|-- README.md
-|-- apb
-|   |-- pom.xml
-|   `-- src
-|       `-- main
-|           `-- java
-|               `-- fr
-|                   `-- uca
-|                       `-- polytech
-|                           `-- year2018
-|                               `-- si3
-|                                   `-- ps5
-|                                       `-- apb
-|                                           `-- Main.java
-|-- dataset
-|-- install.md
-|-- parcoursup
-|   |-- pom.xml
-|   `-- src
-|       `-- main
-|           `-- java
-|               `-- fr
-|                   `-- uca
-|                       `-- polytech
-|                           `-- year2018
-|                               `-- si3
-|                                   `-- ps5
-|                                       `-- parcoursup
-|                                           `-- Main.java
-`-- pom.xml
+  - `-i filename`: a path to the dataset to be used as input
+  - `-o filename`: a path to the solution file to be created
+  - `--distance`: a boolean flag to compute the distance between a solution and a baseline (see `-b`)
+  - `--satisfaction`: a boolean flag that triggers the satisfaction metrics computation if activated.
+  - `-b filename`: a path to a reference solution, when needed (see `--distance`)
+  - `--stability`: a boolean flag to compute the stability of the solution.
 
-23 directories, 8 files
+**Hints**:
+ 
+  - to handle command line parsing, you can consider using [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/), a reference API to support this task properly.
+  - Input files can be bogus. In such a situation, you program must exit with an exit code equals to `1`.
 
-``` 
+### Compute a stable marriage 
 
-  * The `install.md` file contains information to retrieve the datasets to be used. Please follow its contents to populate automatically the `dataset` directory;
-  * The `README.md` file should be updated to reflect your team contents. It will be used as a journal, so you should provide each day a brief report on what happened during the day;
-  * The directory contains three `pom.xml` file, reflecting the three modules modelled in this system: 
-    *  The `./pom.xml` file is the root one. Change its contents to replace the `team.name` tag, and the `groupId` one with your assigned identifier.
-    *  The `./apb/pom.xml` file is the pom that controls the APB implementation. Edit its contents to change the `groupId` one to match the root one.
-    *  The `./parcoursup/pom.xml` file is the pom that controls the ParcourSup implementation. Do the same modification than for APB.
-  * The `travis.yml` file describes the continuous integration process, see the associated section. 
-
-
-## Accessing the Continuous Integration server
-
-Thanks to Travis academic offer, your project is automatically linked to a continuous integration server. It means that each time that you `push` your code to the Github repository, the following process is triggered:
-
-  1. First it compiles your code using the following command: `mvn clean package`
-  2. If the compilation succeeds, it runs the `PMD` tools to analyse the quality of your code and detect bad smells;
-  3. In any case, it run the `Git Inspector` took to analyse code paternity.
-
-For each commit, you can connect to [TravisCI](http://travis-ci.com) to see its status.
-
-![create team](./pics/travis.png)
-
-
-### Example of `PMD` output
-
-PMD is a static code analysis tools that can identify classical issues in your code. It will helps you to improve code quality.
+For example, to create a file named `s10.txt` that contains the recruitment made according to the dataset stored in `.txt`, you will invoke your code according to the following command line:
 
 ```
-azrael:3A_test_framework mosser$ $PWD/pmd-bin-6.10.0/bin/run.sh pmd -d polyunit/src/main/java -R rulesets/java/quickstart.xml -f text
-Dec 13, 2018 7:54:06 PM net.sourceforge.pmd.PMD processFiles
-WARNING: This analysis could be faster, please consider using Incremental Analysis: https://pmd.github.io/pmd-6.10.0/pmd_userdocs_incremental_analysis.html
-fr/unice/polytech/qgl/tests/unit/Runner.java:3:	Avoid unused imports such as 'fr.unice.polytech.qgl.tests.unit.annotations'
-fr/unice/polytech/qgl/tests/unit/Runner.java:28:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
-fr/unice/polytech/qgl/tests/unit/Runner.java:52:	This statement should have braces
-fr/unice/polytech/qgl/tests/unit/Runner.java:63:	This statement should have braces
-fr/unice/polytech/qgl/tests/unit/TestResult.java:21:	Position literals first in String comparisons
-fr/unice/polytech/qgl/tests/unit/annotations/Test.java:14:	Exceptions should not extend java.lang.Throwable
-fr/unice/polytech/qgl/tests/unit/annotations/Test.java:14:	The class name 'DEFAULT_EXPECTATION' doesn't match '[A-Z][a-zA-Z0-9]*'
-fr/unice/polytech/qgl/tests/unit/assertions/Assertion.java:3:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
-fr/unice/polytech/qgl/tests/unit/assertions/Assertion.java:3:	The utility class name 'Assertion' doesn't match '[A-Z][a-zA-Z0-9]+(Utils?|Helper)'
-fr/unice/polytech/qgl/tests/unit/assertions/Assertion.java:12:	This statement should have braces
-fr/unice/polytech/qgl/tests/unit/assertions/Assertion.java:17:	This statement should have braces
-fr/unice/polytech/qgl/tests/unit/assertions/Assertion.java:23:	This statement should have braces
-fr/unice/polytech/qgl/tests/unit/assertions/AssertionFailedError.java:3:	Exceptions should not extend java.lang.Error
+azrael:apb mosser$ ./apb.sh -i ../dataset/samples/sample_10.txt -o s10.txt
 ```
 
-### Example of `Git Inspector` output
+The contents of the `s10.txt` file must be conform to the solution file format (see dataset description):
 
-Git Inspector is used to analyse your git history and identify contribution of each team member in the project.
+```
+azrael:apb mosser$ cat s10.txt
+1 2 1 1 2 1 4 0 3 2
+```
 
-![create team](./pics/inspector.png)
+### Measure the distance between two solutions
+
+A _difference_ is defined as the fact that a student affectation is not the same in the solution than in the baseline. Consequently, the _distance_ between a solution and a baseline is defined as the sum of the detected differences. 
+
+To compute the distance between two solutions, you will invoke your code as the following:
+
+```
+azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10.txt
+0
+```
+
+The `0` printed on the standard output indicates that there is no differences between `s10.txt` and the baseline. 
+
+```
+azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10-bad.txt
+2
+```
+
+The `2` here indicates that there is a couple of students who differs in `s10-bad.txt` with respect to the given baseline.
 
 
-The tool can also generate HTML reports that shows team member's contributions.
+### Measure the satisfaction of stakeholders
 
-![create team](./pics/inspector-html.png)
+The satisfaction metrics measure the _hapinness_ of both schools and students. 
+
+From the student point of view, considering wish lists of size `n`, we compute:
+
+  -  the number of students who obtained their first choice, the number of students who obtained their second choice, ..., and finally the number of students who did not obtain an affectation at the end;
+  - and the average choice obtained by the student population.
+
+For the school point of view, we measure the average distance between each recruitment. Consider a school with a capacity of 3 students. If the school recruits its three first choices, then its satisfaction is maximal. But if this school recruits students ranked `4`, `8` & `12`, then its distance to the maximal satisfaction increases. We mesure such a distance as the average difference with an optimal recruitment. Here, `d = ( (4-1) + (8-2) + (12-3) ) / 3 = 6` (and in the optimal case, `do = ( (1-1) + (2-2) + (3-3) ) / 3 = 0`).
+
+
+The program is invoked as the following: 
+
+```
+azrael:apb mosser$ ./apb.sh --satisfaction -o s10.txt -i ../dataset/samples/sample_10.txt
+0  1  2  X
+8  1  1  0
+1.3
+2.3
+```
+
+It means that considering the dates stored in `sample_10.txt` and the solution stored in `s10.txt`:
+
+  - `8` students obtained their first choice (rank `0`);
+  - `1` student obtained her second choice (rank `1`);
+  - `1` student obtained her third choice (rank `2`);
+  - No students were out at the end of the recruitment process (rank `X`);
+  - The average choice for students is `1.3` (`=  (8*1 + 1*2 + 1*3) / 10`);  
+  - The average distance to optimal recruitment for schools is `2.3`.
+
+
+### Measure the stability of the recruitment
+
+This metrics measures that the _stability_ property of the algorithm is respected. A couple (_i.e._, a student-school pair) is defined as _unstable_ when **XXX**
+
+The program is invoked as the following: 
+
+```
+azrael:apb mosser$ ./apb.sh --stability -o s1000.txt -i ../dataset/samples/sample_1_000.txt
+316
+126
+```
+
+In this case, it means that:
+
+  - `316` couples are detected as unstable;
+  - `126` students are involved in these couples.
+
+  
+### Error cases
+
+  - Bad input file : exit code `1`
+  - Missing file: exit code `2`
+  - Cheated solution used as input: exit code `3`
+
