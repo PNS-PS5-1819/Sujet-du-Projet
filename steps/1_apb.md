@@ -41,9 +41,8 @@ This algorithm ensures the two following properties:
 ## Expected Work
 
   1. Implement a parser that support the input files available in the provided dataset;
-  2. Adapt the Gale-Shapley algorithm to work with schools and students instead of mens and womens;
+  2. Adapt the Gale-Shapley algorithm to work with schools and students instead of menhttps://github.com/PNS-PS5-1819/Sujet-du-Projet/blob/master/steps/1_apb.md and women;
   3. Implement a set of metrics to measure your solution
-  3. Benchmark the execution time of your algorithm on the provided datasets.
 
 ## Running your project
 
@@ -123,7 +122,7 @@ azrael:apb mosser$ ./apb.sh --satisfaction -o s10.txt -i ../dataset/samples/samp
 2.3
 ```
 
-It means that considering the dates stored in `sample_10.txt` and the solution stored in `s10.txt`:
+It means that considering the data stored in `sample_10.txt` and the solution stored in `s10.txt`:
 
   - `8` students obtained their first choice (rank `0`);
   - `1` student obtained her second choice (rank `1`);
@@ -135,7 +134,12 @@ It means that considering the dates stored in `sample_10.txt` and the solution s
 
 ### Measure the stability of the recruitment
 
-This metrics measures that the _stability_ property of the algorithm is respected. A couple (_i.e._, a student-school pair) is defined as _unstable_ when **XXX**
+This metrics measures that the _stability_ property of the algorithm is respected. A couple (_i.e._, a student-school pair) is defined as _unstable_ when a student preferred a school _S_ but was recruited in _S'_ even if she could have been recruited in _S_ based on the school ranking. A single student might be involved in multiple unstable couples.
+
+To compute such an information, one can:
+
+  1. Go through the list of schools and identify the rank of the last recruited candidate;
+  2. Go through the list of students, and identify an _instability_ when the candidate has a rank higher than the last recruited candidate for a preferred school (_i.e._, a school ranked higher in the wish list than the one the candidate obtained at the end).
 
 The program is invoked as the following: 
 
@@ -151,7 +155,7 @@ In this case, it means that:
   - `126` students are involved in these couples.
 
   
-### Error cases
+## Appendix: Error cases
 
   - Bad input file : exit code `1`
   - Missing file: exit code `2`

@@ -26,21 +26,23 @@ Your mission for the next five days is the following:
   
   - [Understand the legacy ecosystem](./steps/0_setup.md)
   - [Implement the algorithm used by APB](./steps/1_apb.md)
-  - [Implement a simulation engine for ParcourSup](./steps/2_ParcourSup.md)
-  - [Write a report intended to the Minister's cabinet](./steps/3_Report.md)
+  - [Give priority to students](./steps/2_student_first.md)
+  - [Implement a simulation engine for ParcourSup](./steps/3_ParcourSup.md)
+  - [Write a report intended to the Minister's cabinet](./steps/4_Report.md)
 
 ## Timeline & Deliveries
 
   - Monday:
     - 08:00: Kick-off presentation (amphitheater)
-    - 10:00: All teams declared in GitHub Classroom
+    - 10:00: All teams declared __properly__ in GitHub Classroom
+    - 19:00: _APB_ is implemented and working
   - Tuesday:
-    - 12:00: _APB_ is implemented and working
-    - 13:15: Presentation of _ParcourSup_ (amphitheater)
-  - Wednesday:
+    - 13:15: Q&A (amphitheater)
+    - 19:00: _Plan B_ + Benchmark available 
+  - Wednesday: 
     - 19:00: Delivery script executed for the first time (tag: `first`)
   - Thurdsay:
-    - 08:00 - 12:15: Demonstration to cabinet's member of the first results
+    - 08:00 - 12:15: Demonstration to cabinet's member of the first results (APB, Plan B & ParcourSup)
   - Friday: 
     - 19:00: Delivery script executed for the second time (tag: `almost`)
   - Sunday:
