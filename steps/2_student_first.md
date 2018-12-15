@@ -70,11 +70,19 @@ If you are not confident enough in your skills to use JMH (actually it is more s
   3. Remove the min and max values;
   4. Compute the average execution time with the `N-2` remaining values.
 
-
 But it s clear that JMH will give you way more accurate results than this method.
 
 Find the right graphical representation to present your non-functional benchmark to your customer (bar chart, moustache box, point cloud, ...).
 
+
+## Appendix: JMH usage
+
+[Examples](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/) are available to help you kickstart and [understand how things work](http://blog.soat.fr/2015/07/benchmark-java-jmh-fine-tuning/).
+
+Writing benchmarks can be difficult and [some pitfalls must be avoided](http://www.oracle.com/technetwork/articles/java/architect-benchmarking-2266277.html). The following research paper describes clearly those pitfalls and how to avoid them. It is easily readable and understandable as really focused on a problem/solution approach.
+
+> [Automatic Microbenchmark Generation to Prevent Dead
+Code Elimination and Constant Folding](http://diversify-project.eu/papers/rodriguez-cancio16.pdf) - _<span style="font-size: 0.7em;">Rodriguez-Cancio, Marcelino, Benoit Combemale, and Benoit Baudry. "Automatic microbenchmark generation to prevent dead code elimination and constant folding." Proceedings of the 31st IEEE/ACM International Conference on Automated Software Engineering. ACM, 2016.</span>_
 
 
 
