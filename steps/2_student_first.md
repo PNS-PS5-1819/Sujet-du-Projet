@@ -6,6 +6,8 @@ If you look at the satisfaction metrics for APB, it does not look really fair fo
 
 We propose here to evaluate a completely different strategy, where we will privileges students choices: a student who chose a school _S_ as first choice will always be preferred over a student who chose _S_ as second choice. We only use the ranking defined by the schools when the number of candidates exceed the capacity of the school.
 
+This is an adaptation of the stable marriage algorithm, where a school will always answer `yes` instead of `maybe` at the end of a cycle. If too many `yes` are proposed, then the ranking made by the school is made to only keep the better candidates and reject the others.
+
 
 ## Expected Work
 
