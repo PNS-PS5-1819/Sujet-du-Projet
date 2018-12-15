@@ -41,7 +41,7 @@ This algorithm ensures the two following properties:
 ## Expected Work
 
   1. Implement a parser that support the input files available in the provided dataset;
-  2. Adapt the Gale-Shapley algorithm to work with schools and students instead of menhttps://github.com/PNS-PS5-1819/Sujet-du-Projet/blob/master/steps/1_apb.md and women;
+  2. Adapt the Gale-Shapley algorithm to work with schools and students instead of men and women;
   3. Implement a set of metrics to measure your solution
 
 ## Running your project
