@@ -75,6 +75,19 @@ In addition, it must accept the following ones :
   - `--seed i`: specify a seed for the random generator to make an experiment reproducible.
   - `--filling`: compute the `filling` metric.
  
+ The `-c` and `-s` parameters can be used multiple times for the same invocation. For example, the following command line will start a simulation with 5% of stubborn candidates, 20% of curious ones, and 75% of default (here `caution`) ones
+
+```
+$ ./parcousup.sh --profiles
+Candidate: (3 profiles available)
+  - caution (default)
+  - curious
+  - stubborn
+School:    (1 profile available)
+  - ranked (default)
+$ ./parcousup.sh -c stubborn:5 -c curious:20 -i ... -o ...
+```
+ 
  At the end of the execution of a given simulation, the program must write on `stdout`:
  
    - the number of days consumed to find a solution for all students;
