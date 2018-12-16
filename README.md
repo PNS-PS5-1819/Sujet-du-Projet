@@ -35,7 +35,7 @@ Your mission for the next five days is the following:
   - Monday:
     - 08:00: Kick-off presentation (amphitheater)
     - 10:00: All teams declared __properly__ in GitHub Classroom
-    - 19:00: _APB_ is implemented and working
+    - 19:00: _APB_ is working
   - Tuesday:
     - 13:15: Q&A (amphitheater)
     - 19:00: _Plan B_ + Benchmark available 
@@ -62,6 +62,13 @@ Your mission for the next five days is the following:
 
 We use Slack for discussions (strict "no email" policy), particularly the `#ps5-final` channel. Use the public channel for questions/remarks related to the project, or direct message to your facilitator (Benjamin or Sebastien) for questions related to your group.
 
+## Evaluation
+
+  - Code: 30%
+  - Delivery / Execution: 20%
+  - Demonstration (Thursday): 10%
+  - Report: 40%
+  
 ## Frequently Asked Questions
 
 > Will the input file always be valid?

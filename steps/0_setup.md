@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<font color="red"><strong>Students who do not comply with the instructions in this section will lose 50% of their grade.</strong></font>
+<strong>Students who do not comply with the instructions in this section will lose 50% of their grade.</strong>
 
 </div>
 
@@ -96,37 +96,40 @@ azrael:skeleton mosser$ tree -a -I '.git*' .
 |-- .travis.yml
 |-- README.md
 |-- apb
+|   |-- apb.sh
 |   |-- pom.xml
 |   `-- src
 |       `-- main
 |           `-- java
-|               `-- fr
-|                   `-- uca
-|                       `-- polytech
-|                           `-- year2018
-|                               `-- si3
-|                                   `-- ps5
-|                                       `-- apb
-|                                           `-- Main.java
+|               `-- si3
+|                   `-- ps5
+|                       `-- apb
+|                           `-- Main.java
 |-- dataset
 |-- install.md
 |-- parcoursup
+|   |-- parcoursup.sh
 |   |-- pom.xml
 |   `-- src
 |       `-- main
 |           `-- java
-|               `-- fr
-|                   `-- uca
-|                       `-- polytech
-|                           `-- year2018
-|                               `-- si3
-|                                   `-- ps5
-|                                       `-- parcoursup
-|                                           `-- Main.java
-`-- pom.xml
-
-23 directories, 8 files
-
+|               `-- si3
+|                   `-- ps5
+|                       `-- parcoursup
+|                           `-- Main.java
+|-- pom.xml
+`-- student_first
+    |-- pom.xml
+    |-- src
+    |   `-- main
+    |       `-- java
+    |           `-- si3
+    |               `-- ps5
+    |                   `-- sf
+    |                       `-- Main.java
+    `-- student_first.sh
+    
+22 directories, 13 files
 ``` 
 
   * The `install.md` file contains information to retrieve the datasets to be used. **Please follow its contents to populate automatically the `dataset` directory**;
@@ -134,7 +137,9 @@ azrael:skeleton mosser$ tree -a -I '.git*' .
   * The directory contains three `pom.xml` files, reflecting the three modules modelled in this system: 
     *  The `./pom.xml` file is the `root` one. Change its contents to replace the `team.name` tag, and the `groupId` one with your assigned identifier.
     *  The `./apb/pom.xml` file is the pom that controls the `APB` implementation. Edit its contents to change the `groupId` one to match the root one.
+    *  The `./student_first/pom.xml` file is the pom that controls the `APB` implementation. Edit its contents to change the `groupId` one to match the root one.
     *  The `./parcoursup/pom.xml` file is the pom that controls the `ParcourSup` implementation. Do the same modification than for APB.
+    *  Each submodule contains a `.sh` shell script that wraps the execution of `mvn exec:java` in a more user friendly way.
   * The `travis.yml` file describes the continuous integration process, see the associated section. 
 
 
