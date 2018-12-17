@@ -86,14 +86,14 @@ A _difference_ is defined as the fact that a student affectation is not the same
 To compute the distance between two solutions, you will invoke your code as the following:
 
 ```
-azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10.txt
+azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10.txt --distance
 0
 ```
 
 The `0` printed on the standard output indicates that there is no differences between `s10.txt` and the baseline. 
 
 ```
-azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10-bad.txt
+azrael:apb mosser$ ./apb.sh -b ../dataset/solutions/solution_10.txt -o s10-bad.txt --distance
 2
 ```
 
