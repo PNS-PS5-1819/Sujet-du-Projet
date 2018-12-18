@@ -53,11 +53,14 @@ We provide a shell script named `app.sh` that wraps the command line to the `mvn
 You have to support the command line arguments, given in an arbitrary order:
 
   - `-i filename`: a path to the dataset to be used as input
-  - `-o filename`: a path to the solution file to be created
+  - `-o filename`: a path to the solution file 
   - `--distance`: a boolean flag to compute the distance between a solution and a baseline (see `-b`)
   - `--satisfaction`: a boolean flag that triggers the satisfaction metrics computation if activated.
   - `-b filename`: a path to a reference solution, when needed (see `--distance`)
   - `--stability`: a boolean flag to compute the stability of the solution.
+
+When computing a metric (`--distance`, `--satisfaction` and `--stability`), the `-i` and `-o` **MUST** exists before hand. You are not support to recompute a stable marriage each time one wants to compute a distance.
+
 
 **Hints**:
  
