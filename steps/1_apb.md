@@ -160,7 +160,7 @@ In this case, it means that:
   
 ## Appendix: Error cases
 
-  - Bad input file : exit code `1`
+  - Bad input file (as in `-i`) : exit code `1`
   - Missing file: exit code `2`
-  - Cheated solution used as input: exit code `3`
+  - Cheated solution used as input for metrics computations (as in `-b` or `-o`): exit code `3`
 
