@@ -3,7 +3,7 @@
 ## Master branch
 
 | Team     | Build status |
-| ---------- |:----------------------:|
+| :----------: |:----------------------|
 | n-ary-tree | [![Build Status](https://travis-ci.com/PNS-PS5-1819/ps5-final-n-ary-tree.svg?token=hmknWjX5ytV9qyi4AERo&branch=master)](https://travis-ci.com/PNS-PS5-1819/ps5-final-n-ary-tree) |
 | intellijents | [![Build Status](https://travis-ci.com/PNS-PS5-1819/ps5-final-intellijents.svg?token=hmknWjX5ytV9qyi4AERo&branch=master)](https://travis-ci.com/PNS-PS5-1819/ps5-final-intellijents) |
 |bumble-b | [![Build Status](https://travis-ci.com/PNS-PS5-1819/ps5-final-bumble-b.svg?token=hmknWjX5ytV9qyi4AERo&branch=master)](https://travis-ci.com/PNS-PS5-1819/ps5-final-bumble-b)|  
