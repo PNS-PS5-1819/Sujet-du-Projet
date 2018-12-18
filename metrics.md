@@ -132,6 +132,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 
 ### Sample size: 10
 
+#### Distance to `APB`
+
+```
+2
+```
+
 #### Satisfaction
 
 ```
@@ -149,6 +155,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 
 ### Sample size: 100
+
+#### Distance to `APB`
+
+```
+24
+```
 
 #### Satisfaction
 
@@ -168,6 +180,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 
 ### Sample size: 1,000
 
+#### Distance to `APB`
+
+```
+296
+```
+
 #### Satisfaction
 
 ```
@@ -185,6 +203,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 
 ### Sample size: 10,000
+
+#### Distance to `APB`
+
+```
+3411
+```
 
 #### Satisfaction
 
@@ -204,6 +228,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 
 ### Sample size: 100,000
 
+#### Distance to `APB`
+
+```
+34147
+```
+
 #### Satisfaction
 
 ```
@@ -221,6 +251,12 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 
 ### Sample size: 1,000,000
+
+#### Distance to `APB`
+
+```
+341850
+```
 
 #### Satisfaction
 
