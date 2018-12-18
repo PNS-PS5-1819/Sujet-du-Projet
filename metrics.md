@@ -8,21 +8,90 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 
 | Dataset Size | APB (Exec time, s) | StudentFirst (Exec Time, s) |
 |:------------:|:---------------:| :-----------------------:|
-| 10  | 0,082 | 0,083 |
-| 100  | 0,089 | 0,095 |
-| 1,000  | 0,130 | 0,140 |
-| 10,000  | 0,374 | 0,347 |
-| 100,000 | 3,661 | 2,647 |
-| 1,000,000  | 73,826 | 44,245 |
+| 10  | 0.082 | 0.083 |
+| 100  | 0.089 | 0.095 |
+| 1,000  | 0.130 | 0.140 |
+| 10,000  | 0.374 | 0.347 |
+| 100,000 | 3.661 | 2.647 |
+| 1,000,000  | 73.826 | 44.245 |
 
 
+## Distance to stability
 
-## _Admission PostBac_
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 0 | 2 |
+| 100  | 0 | 24 |
+| 1,000  | 0 | 296 |
+| 10,000  | 0 | 3,411 |
+| 100,000 | 0 | 34,147 |
+| 1,000,000  | 0 | 34,1850 |
 
 
-### Sample size: 10
+## Satisfaction (Student)
 
-#### Satisfaction
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 1.3 | 1.3 |
+| 100  | 1.79 | 1.62 |
+| 1,000  | 2.566 | 2.083 |
+| 10,000  | 4.1222 | 3.5167 |
+| 100,000 | 4.68174 | 3.83629  |
+| 1,000,000 | 4.794569 | 3.938451  |
+
+## Satisfaction (Schools)
+
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 2.3 | 2.0 |
+| 100  | 22.34 | 23.88 |
+| 1,000  | 164.968 | 179.0 |
+| 10,000  | 1,120.5652 | 1,211.0725 |
+| 100,000 | 7,387.21814 | 8,348.78312 |
+| 1,000,000  | 80,558.530042 | 86,450.721508 |
+
+## Instability (#couples)
+
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 0 | 0 |
+| 100  | 0 | 15 |
+| 1,000  | 0 | 316 |
+| 10,000  | 0 | 8,400 |
+| 100,000 | 0 | 76,793 |
+| 1,000,000  | 0 | 75,7626 |
+
+## Instability (#Students)
+
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 0 | 0 |
+| 100  | 0 | 4 |
+| 1,000  | 0 | 126 |
+| 10,000  | 0 | 2,196 |
+| 100,000 | 0 | 13,323 |
+| 1,000,000  | 0 | 119,964 |
+
+
+## Excluded students (X)
+
+| Dataset Size | APB | StudentFirst  |
+|:------------:|:---------------:| :-----------------------:|
+| 10  | 0 | 1 |
+| 100  | 1 | 1 |
+| 1,000  | 23 | 32 |
+| 10,000  | 436 | 494 |
+| 100,000 | 8,284 | 8,797 |
+| 1,000,000  | 41,115 | 67,545 |
+
+## Raw data
+
+### _Admission PostBac_
+
+
+#### Sample size: 10
+
+##### Satisfaction
 
 ```
 0  1  2  X
@@ -31,16 +100,16 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 2.3
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 100
+#### Sample size: 100
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0   1   2   3   4   5   6   X
@@ -49,16 +118,16 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 22.34
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 1,000
+#### Sample size: 1,000
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0    1    2    3    4    5    6    7    8    9    X
@@ -67,16 +136,16 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 164.968
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 10,000
+#### Sample size: 10,000
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0     1     2     3     4     5     6     7     8     9    10    11    12    13     X
@@ -85,16 +154,16 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 1120.5652
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 100,000
+#### Sample size: 100,000
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16      X
@@ -103,16 +172,16 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 7387.21814
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 1,000,000
+#### Sample size: 1,000,000
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0       1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23       X
@@ -121,24 +190,24 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 80558.530042
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-## Plan B (Student First)
+### Plan B (Student First)
 
-### Sample size: 10
+#### Sample size: 10
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 2
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0  1  2  X
@@ -147,22 +216,22 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 2.0
 ```
 
-#### Stability
+##### Stability
 
 ```
 0
 0
 ```
 
-### Sample size: 100
+#### Sample size: 100
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 24
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0   1   2   3   4   5   6   X
@@ -171,22 +240,22 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 23.88
 ```
 
-#### Stability
+##### Stability
 
 ```
 15
 4
 ```
 
-### Sample size: 1,000
+#### Sample size: 1,000
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 296
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0    1    2    3    4    5    6    7    8    9    X
@@ -195,22 +264,22 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 179.0
 ```
 
-#### Stability
+##### Stability
 
 ```
 316
 126
 ```
 
-### Sample size: 10,000
+#### Sample size: 10,000
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 3411
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0     1     2     3     4     5     6     7     8     9    10    11    12    13     X
@@ -219,22 +288,22 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 1211.0725
 ```
 
-#### Stability
+##### Stability
 
 ```
 8400
 2196
 ```
 
-### Sample size: 100,000
+#### Sample size: 100,000
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 34147
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16      X
@@ -243,22 +312,22 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 8348.78312
 ```
 
-#### Stability
+##### Stability
 
 ```
 76793
 13323
 ```
 
-### Sample size: 1,000,000
+#### Sample size: 1,000,000
 
-#### Distance to `APB`
+##### Distance to `APB`
 
 ```
 341850
 ```
 
-#### Satisfaction
+##### Satisfaction
 
 ```
 0       1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23       X
@@ -267,7 +336,7 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 86450.721508
 ```
 
-#### Stability
+##### Stability
 
 ```
 757626
