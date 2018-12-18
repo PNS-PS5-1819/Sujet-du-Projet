@@ -59,7 +59,7 @@ You have to support the command line arguments, given in an arbitrary order:
   - `-b filename`: a path to a reference solution, when needed (see `--distance`)
   - `--stability`: a boolean flag to compute the stability of the solution.
 
-When computing a metric (`--distance`, `--satisfaction` and `--stability`), the `-i` and `-o` **MUST** exists before hand. You are not support to recompute a stable marriage each time one wants to compute a distance.
+When computing a metric (`--distance`, `--satisfaction` and `--stability`), the `-i` and `-o` **MUST** exists before hand. You are not supposed to recompute a stable marriage each time one wants to compute a distance.
 
 
 **Hints**:
