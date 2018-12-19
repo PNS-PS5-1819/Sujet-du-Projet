@@ -59,7 +59,7 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 | 1,000  | 0 | 316 |
 | 10,000  | 0 | 8,400 |
 | 100,000 | 0 | 76,793 |
-| 1,000,000  | 0 | 75,7626 |
+| 1,000,000  | 0 | 757,626 |
 
 ## Instability (#Students)
 
