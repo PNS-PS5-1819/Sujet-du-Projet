@@ -32,23 +32,23 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 
 | Dataset Size | APB | StudentFirst  |
 |:------------:|:---------------:| :-----------------------:|
-| 10  | 1.3 | 1.3 |
+| 10  | 1.30 | 1.30 |
 | 100  | 1.79 | 1.62 |
-| 1,000  | 2.566 | 2.083 |
-| 10,000  | 4.1222 | 3.5167 |
-| 100,000 | 4.68174 | 3.83629  |
-| 1,000,000 | 4.794569 | 3.938451  |
+| 1,000  | 2.57 | 2.08 |
+| 10,000  | 4.12 | 3.52 |
+| 100,000 | 4.68 | 3.84  |
+| 1,000,000 | 4.79 | 3.94  |
 
 ## Satisfaction (Schools)
 
 | Dataset Size | APB | StudentFirst  |
 |:------------:|:---------------:| :-----------------------:|
-| 10  | 2.3 | 2.22222 |
-| 100  | 22.5657 | 24.1212 |
-| 1,000  | 168.852 | 184.917 |
+| 10  | 2.30 | 2.22 |
+| 100  | 22.57 | 24.12 |
+| 1,000  | 168.85 | 184.92 |
 | 10,000  | 1,171.65 | 1,274.01 |
 | 100,000 | 8,054.45 | 9,154.07 |
-| 1,000,000  | 84,012.7 | 92,713 |
+| 1,000,000  | 84,012.71 | 92,713.02 |
 
 ## Instability (#couples)
 
@@ -96,8 +96,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0  1  2  X
 8  1  1  0
-1.3
-2.3
+1.30
+2.30
 ```
 
 ##### Stability
@@ -115,7 +115,7 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 0   1   2   3   4   5   6   X
 70  12   6   2   3   6   0   1
 1.79
-22.34
+22.57
 ```
 
 ##### Stability
@@ -132,8 +132,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0    1    2    3    4    5    6    7    8    9    X
 587  134   61   36   17   38   53   21   21    9   23
-2.566
-164.968
+2.57
+168.85
 ```
 
 ##### Stability
@@ -150,8 +150,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0     1     2     3     4     5     6     7     8     9    10    11    12    13     X
 5081   958   368   330   384   364   206   276   316   319   429   229   250    54   436
-4.1222
-1120.5652
+4.12
+1171.65
 ```
 
 ##### Stability
@@ -168,8 +168,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16      X
 54453   9148   5043   3273   2279   2308   1059    838   1219    519    529   1072   3542   2251   1717   1349   1117   8284
-4.68174
-7387.21814
+4.68
+8054.45
 ```
 
 ##### Stability
@@ -186,8 +186,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0       1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23       X
 556515  107238   57173   37639   26350   19422   11009    6364   13130    7184   13009    4346    3601    3161    3043    8872    5737    6184   22080   18725    9586    5936    3257    9324   41115
-4.794569
-80558.530042
+4.79
+84012.71
 ```
 
 ##### Stability
@@ -212,8 +212,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0  1  2  X
 9  0  0  1
-1.3
-2.0
+1.30
+2.22
 ```
 
 ##### Stability
@@ -237,7 +237,7 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 0   1   2   3   4   5   6   X
 78  12   0   0   3   5   1   1
 1.62
-23.88
+24.12
 ```
 
 ##### Stability
@@ -260,8 +260,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0    1    2    3    4    5    6    7    8    9    X
 718  105   27   29   17   35   10    3   23    1   32
-2.083
-179.0
+2.08
+184.92
 ```
 
 ##### Stability
@@ -284,8 +284,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0     1     2     3     4     5     6     7     8     9    10    11    12    13     X
 6606   541    95    58   329   406    44   180   278   369    76   159   323    42   494
-3.5167
-1211.0725
+3.52
+1274.01
 ```
 
 ##### Stability
@@ -308,8 +308,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16      X
 70086   6729   1923    242   1488   2013    225     65   1430    133    231    215   1356   1595   1753   1408    311   8797
-3.83629
-8348.78312
+3.84
+9154.07
 ```
 
 ##### Stability
@@ -332,8 +332,8 @@ These execution time are just _one shot_ execution of the _APB_ and _StudentFirs
 ```
 0       1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23       X
 725796   60651   31721   26385   15796    6244    3291     811    1588    1315   12250    1598     470     392     576    6764    4212    1416    4370   10773    7731    4358    2311    1636   67545
-3.938451
-86450.721508
+3.94
+92713.02
 ```
 
 ##### Stability
